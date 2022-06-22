@@ -8,15 +8,12 @@ function findMin(nums){
             return nums[l];
         }
         let m = l + ((r - l) >> 1);
-        if(nums[m] > nums[m + 1] && nums[m] > nums[m - 1]){
+        if(nums[m] > nums[m + 1] && nums[m] >= nums[m - 1]){
             return nums[m + 1];
-        }
-        if(nums[m] < nums[m + 1] && nums[m] < nums[m - 1]){
-            return nums[m];
         }else if(nums[m] > nums[n - 1]){
             return process(m + 1, r);
         }else{
-            return process(l, m - 1);
+            return process(l, m);
         }
     }
 }
