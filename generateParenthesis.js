@@ -69,7 +69,7 @@
 //                 }
 //             }
 //         }
-//         function isMatch(s1,s2){
+//         function isMatch1(s1,s2){
 //             let helpArr = ['()','[]','{}'];
 //             for(let i = 0; i < helpArr.length; i++){
 //                 if(s1 + s2 === helpArr[i]){
@@ -85,7 +85,7 @@
 //                 // console.log(stack)
 //             }else{
 //                 let s1 = stack.pop();
-//                 if(!isMatch(s1,s[i])){
+//                 if(!isMatch1(s1,s[i])){
 //                     return false;
 //                 }
 //             }

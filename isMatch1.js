@@ -81,7 +81,7 @@ function isMatch0(s,p){
 }
 
 
-function isMatch(s,p){
+function isMatch1(s, p){
     if((s === null && p !== null) || (s !== null && p === null)){
         return false;
     }
@@ -150,7 +150,7 @@ function isMatch(s,p){
             return true;
     }
 }
-// console.log(isMatch('aab','a*a*b'));
+// console.log(isMatch1('aab','a*a*b'));
 //alllla
 //al  *a
 
@@ -188,7 +188,7 @@ function main(){
     for(let i = 0; i < testTime; i++){
         let s = generateRandomStra(15);
         let p = generateRandomStrp(15);
-        let res = isMatch(s,p);
+        let res = isMatch1(s,p);
         if(res){
             console.log(s);
             console.log(p);

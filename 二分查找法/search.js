@@ -14,19 +14,23 @@ function search(nums,target){
                 return -1;
             }
         }
-        let m = l + ((r - l) >> 1);
-        if(nums[m] === target){
-            return m;
-        }else if(nums[m] > target){
-            let res1 = binary(l, m - 1);
-            let res2 = binary(m + 1, r)
-            res = res1 !== -1 ? res1 : res2;
-        }else{
-            let res1 = binary(m + 1, r);
-            let res2 = binary(l, m - 1);
-            res = res1 !== -1 ? res1 : res2;
+        let mid = l + ((r - l) >> 1);
+        if(nums[mid] === target){
+            return mid;
         }
-        res = res === undefined ? -1 : res;
+        if (nums[0] <= nums[mid]) {
+            if (nums[0] <= target && target < nums[mid]) {
+                res = binary(l, mid - 1);
+            } else {
+                res = binary(mid + 1, r)
+            }
+        } else {
+            if (nums[mid] < target && target <= nums[nums.length - 1]) {
+                res = binary(mid + 1, r);
+            } else {
+                res = binary(l, mid - 1);
+            }
+        }
         return res;
     }
 }
